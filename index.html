@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Miss You</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('/assets/love.jpg'); /* Add your image URL here */
+  background-size: cover;
+  background-position: center;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card {
+  width: 200px; /* Adjust width for smaller screens */
+  max-width: 300px; /* Set maximum width */
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10%; /* Adjust margin for smaller screens */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.message-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-top: 10%; /* Adjust margin for smaller screens */
+}
+
+.message {
+  font-size: 5vw; /* Adjust font size based on viewport width */
+  color: whitesmoke; /* Font color */
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bolder;
+  padding: 2vw; /* Adjust padding based on viewport width */
+  white-space: nowrap; /* Ensure the text appears in one line */
+}
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card" onclick="toggleMessage()">
+    <h2>Click here</h2>
+  </div>
+  <div class="message-container" id="messageContainer">
+    <div class="message" id="message">
+      <p>I miss you so much nanna🥺</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMessage() {
+  var card = document.querySelector('.card');
+  var messageContainer = document.getElementById('messageContainer');
+  card.style.opacity = '0'; // Set card opacity to 0
+  card.style.pointerEvents = 'none'; // Disable pointer events on the card
+  messageContainer.style.display = 'block'; // Display the message container
+}
+</script>
+
+</body>
+</html>
